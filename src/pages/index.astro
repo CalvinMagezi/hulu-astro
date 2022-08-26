@@ -1,11 +1,29 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Results from '../components/react/Results'
+import requests from '../helpers/requests'
+import Results from '../components/display/Results.astro';
+
+const {url} = Astro.request
+const params = url.split("=")
+const genre = params[1]
+const savedRequests:any = requests
+let results;
+
+if(genre){
+	const request = await fetch(`https://api.themoviedb.org/3${savedRequests[genre]?.url}`).then(res => res.json()).catch(err => console.log(err))
+	results = request.results
+	
+}else{
+	const request = await fetch(`https://api.themoviedb.org/3${savedRequests.fetchTrending.url}`).then(res => res.json()).catch(err => console.log(err))
+	results = request.results
+	
+}
+
 ---
 
 <Layout title="Astro Hulu Clone">
-	<main>
-		<Results />
+	<main>		
+		<Results results={results} />
 	</main>
 </Layout>
 

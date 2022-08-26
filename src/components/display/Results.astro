@@ -1,0 +1,12 @@
+---
+import type { MovieType } from "../../../typings";
+import Thumbnail from "../react/display/Thumbnail";
+
+const {results}  = Astro.props;
+---
+
+ <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 3xl:flex flex-wrap justify-center gap-6 px-5 my-10">
+      {results.map((result: MovieType) => (
+        <Thumbnail result={result} client:visible />
+      ))}
+</div>

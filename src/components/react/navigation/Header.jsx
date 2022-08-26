@@ -14,12 +14,12 @@ function Header() {
   return (
     <header className="flex flex-col sm:flex-row items-center w-full justify-between p-5 h-auto">
       <div className="flex items-center justify-evenly flex-grow max-w-2xl ">
-        <HeaderItem title="HOME" Icon={HomeIcon} />
-        <HeaderItem title="TRENDING" Icon={BoltIcon} />
-        <HeaderItem title="VERIFIED" Icon={CheckBadgeIcon} />
-        <HeaderItem title="COLLECTIONS" Icon={RectangleStackIcon} />
-        <HeaderItem title="SEARCH" Icon={MagnifyingGlassIcon} />
-        <HeaderItem title="ACCOUNT" Icon={UserIcon} />
+        <HeaderItem title="HOME" Icon={HomeIcon} href="/" />
+        <HeaderItem title="TRENDING" Icon={BoltIcon} href="/" />
+        <HeaderItem title="VERIFIED" Icon={CheckBadgeIcon} href="/" />
+        <HeaderItem title="COLLECTIONS" Icon={RectangleStackIcon} href="/" />
+        <HeaderItem title="SEARCH" Icon={MagnifyingGlassIcon} href="/" />
+        <HeaderItem title="ACCOUNT" Icon={UserIcon} href="/" />
       </div>
       <img src={logo} className="w-28 h-8" alt="" />
     </header>
