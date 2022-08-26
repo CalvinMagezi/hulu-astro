@@ -1,5 +1,5 @@
 import React from "react";
-import { HandThumbUpIcon } from "@heroicons/react/24/outline";
+import { HandThumbUpIcon } from "@heroicons/react/24/outline/index.js";
 
 function Thumbnail({ result }) {
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
